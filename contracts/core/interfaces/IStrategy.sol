@@ -91,13 +91,13 @@ interface IStrategy {
 
     /// @notice Getter for the 'id' of the strategy.
     /// @return The ID of the strategy
-    function getStrategyId() external view returns (bytes32);
+    // function getStrategyId() external view returns (bytes32);
 
     /// @notice Checks whether an allocator is valid or not, will usually be true for all strategies
     ///      and will depend on the strategy implementation.
     /// @param _allocator The allocator to check
     /// @return Whether the allocator is valid or not
-    function isValidAllocator(address _allocator) external view returns (bool);
+    // function isValidAllocator(address _allocator) external view returns (bool);
 
     /// @notice whether pool is active.
     /// @return Whether the pool is active or not
@@ -109,24 +109,24 @@ interface IStrategy {
 
     /// @notice Increases the balance of the pool.
     /// @param _amount The amount to increase the pool by
-    function increasePoolAmount(uint256 _amount) external;
+    // function increasePoolAmount(uint256 _amount) external;
 
     /// @notice Checks the status of a recipient probably tracked in a mapping, but will depend on the implementation
     ///      for example, the OpenSelfRegistration only maps users to bool, and then assumes Accepted for those
     ///      since there is no need for Pending or Rejected.
     /// @param _recipientId The ID of the recipient
     /// @return The status of the recipient
-    function getRecipientStatus(address _recipientId) external view returns (Status);
+    // function getRecipientStatus(address _recipientId) external view returns (Status);
 
     /// @notice Checks the amount allocated to a recipient for distribution.
     /// @dev Input the values you would send to distribute(), get the amounts each recipient in the array would receive.
     ///      The encoded '_data' will be determined by the strategy, and will be used to determine the payout.
     /// @param _recipientIds The IDs of the recipients
     /// @param _data The encoded data
-    function getPayouts(address[] memory _recipientIds, bytes[] memory _data)
-        external
-        view
-        returns (PayoutSummary[] memory);
+    // function getPayouts(address[] memory _recipientIds, bytes[] memory _data)
+    //     external
+    //     view
+    //     returns (PayoutSummary[] memory);
 
     /// ======================
     /// ===== Functions ======

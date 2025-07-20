@@ -108,9 +108,9 @@ abstract contract BaseStrategy is IStrategy, Transfer, Errors {
 
     /// @notice Getter for the 'strategyId'.
     /// @return The ID of the strategy
-    function getStrategyId() external view override returns (bytes32) {
-        return strategyId;
-    }
+    // function getStrategyId() external view override returns (bytes32) {
+    //     return strategyId;
+    // }
 
     /// @notice Getter for the 'poolAmount'.
     /// @return The balance of the pool
@@ -150,11 +150,11 @@ abstract contract BaseStrategy is IStrategy, Transfer, Errors {
     /// @notice Increases the pool amount.
     /// @dev Increases the 'poolAmount' by '_amount'. Only 'Allo' contract can call this.
     /// @param _amount The amount to increase the pool by
-    function increasePoolAmount(uint256 _amount) external override onlyAllo {
-        _beforeIncreasePoolAmount(_amount);
-        poolAmount += _amount;
-        _afterIncreasePoolAmount(_amount);
-    }
+    // function increasePoolAmount(uint256 _amount) external override onlyAllo {
+    //     _beforeIncreasePoolAmount(_amount);
+    //     poolAmount += _amount;
+    //     _afterIncreasePoolAmount(_amount);
+    // }
 
     /// @notice Registers a recipient.
     /// @dev Registers a recipient and returns the ID of the recipient. The encoded '_data' will be determined by the
@@ -210,7 +210,6 @@ abstract contract BaseStrategy is IStrategy, Transfer, Errors {
         external
         view
         virtual
-        override
         returns (PayoutSummary[] memory)
     {
         uint256 recipientLength = _recipientIds.length;
@@ -231,9 +230,9 @@ abstract contract BaseStrategy is IStrategy, Transfer, Errors {
     /// @dev How the allocator is determined is up to the strategy implementation.
     /// @param _allocator The address to check if it is a valid allocator for the strategy.
     /// @return 'true' if the address is a valid allocator, 'false' otherwise
-    function isValidAllocator(address _allocator) external view virtual override returns (bool) {
-        return _isValidAllocator(_allocator);
-    }
+    // function isValidAllocator(address _allocator) external view virtual override returns (bool) {
+    //     return _isValidAllocator(_allocator);
+    // }
 
     /// ====================================
     /// ============ Internal ==============

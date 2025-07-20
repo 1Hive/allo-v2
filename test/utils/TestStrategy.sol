@@ -34,11 +34,11 @@ contract TestStrategy is IStrategy {
         return poolId;
     }
 
-    function getStrategyId() external view override returns (bytes32) {
+    function getStrategyId() external view returns (bytes32) {
         return strategyId;
     }
 
-    function isValidAllocator(address) external pure override returns (bool) {
+    function isValidAllocator(address) external pure returns (bool) {
         return true; // For mock, always return true
     }
 
@@ -50,14 +50,13 @@ contract TestStrategy is IStrategy {
         return poolAmount;
     }
 
-    function getRecipientStatus(address _recipientId) external view override returns (Status) {
+    function getRecipientStatus(address _recipientId) external view returns (Status) {
         return recipientStatus[_recipientId];
     }
 
     function getPayouts(address[] memory _recipientIds, bytes[] memory)
         external
         pure
-        override
         returns (PayoutSummary[] memory)
     {
         PayoutSummary[] memory payouts = new PayoutSummary[](_recipientIds.length);

@@ -232,7 +232,7 @@ interface IAllo {
     ///       or '_amount' must be greater than 0 if the token is not the native token.
     /// @param _poolId The ID of the pool to fund
     /// @param _amount The amount to fund the pool with
-    function fundPool(uint256 _poolId, uint256 _amount) external payable;
+    // function fundPool(uint256 _poolId, uint256 _amount) external payable;
 
     /// @notice Allocates funds to a recipient.
     /// @dev Each strategy will handle the allocation of funds differently.

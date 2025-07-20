@@ -289,7 +289,7 @@ contract Allo is
         _revokeRole(pools[_poolId].managerRole, _manager);
     }
 
-    /// @notice Transfer the funds recovered  to the recipient
+    /// @notice Transfer the funds recovered to the recipient
     /// @dev 'msg.sender' must be Allo owner
     /// @param _token The token to transfer
     /// @param _recipient The recipient
@@ -493,9 +493,9 @@ contract Allo is
             emit BaseFeePaid(poolId, baseFee);
         }
 
-        if (_amount > 0) {
-            _fundPool(_amount, poolId, _strategy);
-        }
+        // if (_amount > 0) {
+        //     _fundPool(_amount, poolId, _strategy);
+        // }
 
         emit PoolCreated(poolId, _profileId, _strategy, _token, _amount, _metadata);
     }
@@ -553,7 +553,7 @@ contract Allo is
             amountAfterFee = balanceAfterFundingPool - balanceBeforeFundingPool;
         }
 
-        _strategy.increasePoolAmount(amountAfterFee);
+        // _strategy.increasePoolAmount(amountAfterFee);
 
         emit PoolFunded(_poolId, amountAfterFee, feeAmount);
     }
